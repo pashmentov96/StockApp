@@ -3,13 +3,11 @@ function svgMakeChart(data) {
         width = 500 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
 
-// append the svg object to the body of the page
+    // append the svg object to the body of the page
     var svg = d3.select("#svg_example")
         .append("g")
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
-
-//Read the data
 
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
