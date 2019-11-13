@@ -23,3 +23,8 @@ csv-файлы с информацией о котировках содержи�
 
 Скачать примеры таких csv-файлов можно либо в [папке samples](https://github.com/pashmentov96/StockApp/tree/master/samples),
 либо на сайте [Финам](https://www.finam.ru/profile/moex-akcii/pllc-yandex-n-v/export/?market=1&em=388383&code=YNDX&apply=0&df=1&mf=6&yf=2019&from=01.07.2019&dt=8&mt=6&yt=2019&to=08.07.2019&p=6&f=YNDX_190701_190708&e=.csv&cn=YNDX&dtf=1&tmf=1&MSOR=1&mstime=on&mstimever=1&sep=3&sep2=2&datf=1&at=1&fsp=1).
+
+### Пример
+
+Пример работы данного приложения Вы можете увидеть на следующей картинке:
+![Stock app! It's an amazing!](/assets/images/example.png "example")
