@@ -128,6 +128,11 @@ function makeChart() {
         group.addDataset(new Plottable.Dataset(data, {name: value}));
     }
 
+    let pzi = new Plottable.Interactions.PanZoom();
+    pzi.addXScale(xScale);
+    pzi.addYScale(yScale);
+    pzi.attachTo(group);
+
     let chart = new Plottable.Components.Table([
         [yAxis, group],
         [null, xAxis]
