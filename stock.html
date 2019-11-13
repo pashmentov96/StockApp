@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock app</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/plottable@latest/plottable.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="stock.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.5/jquery.csv.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/plottable@latest/plottable.css">
+</head>
+<body>
+    <div id="upload" style="text-align: center;">
+        <input type="file" id="input_file" name="file" onchange="uploadFile()">
+    </div>
+    <div id="radio_buttons" style="padding-left: 50px; padding-top: 10px">
+        <input type="radio" id="choice_1" name="data_y" value="LOW" checked="checked">
+        <label for="choice_1">LOW</label>
+
+        <input type="radio" id="choice_2" name="data_y" value="HIGH">
+        <label for="choice_2">HIGH</label>
+
+        <input type="radio" id="choice_3" name="data_y" value="OPEN">
+        <label for="choice_3">OPEN</label>
+
+        <input type="radio" id="choice_4" name="data_y" value="CLOSE">
+        <label for="choice_4">CLOSE</label>
+
+        <input type="radio" id="choice_5" name="data_y" value="VOL">
+        <label for="choice_5">VOL</label>
+    </div>
+    <div id="graph">
+        <div id="example" style="width: 1200px; height: 900px; float: left"></div>
+        <div id="options" style="float: left" >
+        </div>
+        <svg id="svg_example" height="400" width="500">
+        </svg>
+    </div>
+</body>
+<script src="stock.js">
+</script>
+<script>
+    let choice = localStorage.getItem("CHOICE_RADIO");
+    localStorage.clear();
+    localStorage.setItem("CHOICE_RADIO", choice);
+    addListeners();
+    makeChart();
+</script>
+</html>
