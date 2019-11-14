@@ -128,12 +128,53 @@ function makeChart() {
         group.addDataset(new Plottable.Dataset(data, {name: value}));
     }
 
+    let pzi = new Plottable.Interactions.PanZoom();
+    pzi.addXScale(xScale);
+    pzi.addYScale(yScale);
+    pzi.attachTo(group);
+
     let chart = new Plottable.Components.Table([
         [yAxis, group],
         [null, xAxis]
     ]);
 
     chart.renderTo('#example');
+
+    var tooltipAnchorSelection = group
+        .foreground()
+        .append("circle")
+        .attr("r", 3)
+        .attr("opacity", 0);
+
+    var tooltipAnchor = $(tooltipAnchorSelection.node());
+
+    tooltipAnchor.tooltip({
+        animation: false,
+        container: "body",
+        placement: "auto",
+        title: "text",
+        trigger: "manual"
+    });
+
+    let pointer = new Plottable.Interactions.Pointer();
+
+    pointer.onPointerMove(function(p) {
+        let closest = group.entityNearest(p);
+        if (closest) {
+            tooltipAnchor.attr({
+                cx: closest.position.x,
+                cy: closest.position.y,
+                "data-original-title": "Value: " + closest.datum[localStorage.getItem("CHOICE_RADIO")]
+            });
+            tooltipAnchor.tooltip("show");
+        }
+    });
+
+    pointer.onPointerExit(function () {
+        tooltipAnchor.tooltip("hide");
+    });
+
+    pointer.attachTo(group);
 }
 
 function addListeners() {
