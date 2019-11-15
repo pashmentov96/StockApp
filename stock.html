@@ -40,6 +40,9 @@
 </body>
 <script>
     let choice = localStorage.getItem("CHOICE_RADIO");
+    if (!choice) {
+        choice = "LOW";
+    }
     localStorage.clear();
     localStorage.setItem("CHOICE_RADIO", choice);
     addListeners();
