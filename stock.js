@@ -82,7 +82,7 @@ function makeChart() {
     let div_example = document.getElementById('example');
     let new_div = document.createElement("div");
     new_div.id = "example";
-    new_div.setAttribute("style", "width: 1200px; height: 900px; float: left");
+    new_div.setAttribute("style", "width: 95%; height: 900px; float: left");
 
     div_example.replaceWith(new_div);
 
