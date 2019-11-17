@@ -11,12 +11,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.5/jquery.csv.js"></script>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/plottable@latest/plottable.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stock.css">
 </head>
 <body>
-    <div id="upload" style="text-align: center; margin: auto; width: 300px">
-        <input type="file" id="input_file" name="file" onchange="uploadFile()">
+    <div class="image_upload" style="text-align: center">
+        <label for="input_file">
+            <img src="https://image.flaticon.com/icons/svg/1665/1665731.svg">
+        </label>
+        <input id="input_file" type="file" name="file" onchange="uploadFile()">
     </div>
-    <div id="radio_buttons" style="padding-left: 50px;">
+    <div id="radio_buttons" style="padding-left: 80px">
         <input type="radio" id="choice_1" name="data_y" value="LOW" checked="checked">
         <label for="choice_1">LOW</label>
 
@@ -34,8 +38,7 @@
     </div>
     <div id="graph">
         <div id="example" style="width: 95%; height: 900px; float: left"></div>
-        <div id="options" style="float: left" >
-        </div>
+        <div id="options" style="float: left"></div>
     </div>
 </body>
 <script>

@@ -1,0 +1,10 @@
+.image_upload > input
+{
+    display: none;
+}
+
+.image_upload img
+{
+    width: 65px;
+    cursor: pointer;
+}
