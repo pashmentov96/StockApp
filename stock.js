@@ -140,13 +140,13 @@ function makeChart() {
 
     chart.renderTo('#example');
 
-    var tooltipAnchorSelection = group
+    let tooltipAnchorSelection = group
         .foreground()
         .append("circle")
         .attr("r", 3)
         .attr("opacity", 0);
 
-    var tooltipAnchor = $(tooltipAnchorSelection.node());
+    let tooltipAnchor = $(tooltipAnchorSelection.node());
 
     tooltipAnchor.tooltip({
         animation: false,
