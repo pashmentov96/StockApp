@@ -4,13 +4,13 @@ function validateOptionsSelection() {
 
 function addOption(name) {
     let my_colors = ['#1F77B4', '#FF7F0E', '#2CA02C', '#D62728', '#9467BD', '#8C564B', '#CFECF9', '#7F7F7F', '#BCBD22', '#17BECF'];
-    var checkboxes = document.getElementsByName("option");
-    var index = checkboxes.length;
+    let checkboxes = document.getElementsByName("option");
+    let index = checkboxes.length;
 
     localStorage.setItem("COLOR_" + name, my_colors[index]);
 
-    var myDiv = document.getElementById("options");
-    var checkbox = document.createElement('input');
+    let myDiv = document.getElementById("options");
+    let checkbox = document.createElement('input');
     checkbox.type = "checkbox";
     checkbox.name = "option";
     checkbox.value = name;
@@ -18,14 +18,14 @@ function addOption(name) {
     checkbox.checked = "checked";
     checkbox.onclick = () => validateOptionsSelection();
 
-    var label = document.createElement('label');
+    let label = document.createElement('label');
     label.htmlFor = checkbox.id;
     label.style.color = my_colors[index];
     label.appendChild(document.createTextNode(name));
     myDiv.appendChild(checkbox);
     myDiv.appendChild(label);
 
-    var br = document.createElement('br');
+    let br = document.createElement('br');
     myDiv.appendChild(br);
 }
 
